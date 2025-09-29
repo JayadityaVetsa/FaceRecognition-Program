@@ -18,10 +18,16 @@ This project is a from-scratch implementation of a basic **Face Recognition** an
 ### 1. Clone the Repository
 
 ### 2. Create a Virtual Environment
+```bash
 python -m venv .venv
+source .venv/bin/activate   # Mac/Linux
+.venv\Scripts\activate      # Windows
+```
 
 ### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
 #### Dependencies:
 1. tensorflow
@@ -34,17 +40,25 @@ Use the webcam capture script to collect images for each person/emotion.
 (Note: the data/ folder is git-ignored, so your personal images won’t be uploaded.)
 
 Example:
+```bash
 python capture.py --type person --label NAME --count 200
 python capture.py --type emotion --label EMOTION --count 200
+```
 
 ### 5. Train the Model
+```bash
 python train_face_recognizer.py
 python train_emotion_cnn.py
+```
 
 ### 6. Run Real-Time Detection
+```bash
 python realtime_demo.py
+```
 
+## Project Structure
 
+```bash
 face-emotion-project/
 ├─ capture.py
 ├─ train_face_recognizer.py
@@ -55,3 +69,4 @@ face-emotion-project/
 └─ data/
    ├─ faces/            # for face recognition: data/faces/<person_name>/<img>.jpg
    └─ emotions/         # for emotion training: data/emotions/<emotion_label>/<img>.jpg
+```
